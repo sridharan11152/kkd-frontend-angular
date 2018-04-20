@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import {CustomerMyAccountComponent} from './customer/component/customer-my-account/customer-my-account.component'
+import {CustomerMyAccountComponent} from './customer/component/customer-my-account/customer-my-account.component';
+import{CustomerCurrentOrderComponent} from './customer/component/customer-my-account/customer-current-order/customer-current-order.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -20,11 +20,11 @@ import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CustomerAuthenticationService } from './customer/services/customer-authentication.service';
 
-// const routes :Routes = [
-//   {path: '', redirectTo:'/search',pathMatch:'full'},
-//   {path: 'search', component:MoviesComponent},
-//   {path: 'favourite', component:FavMoviesComponent },
-// ];
+const routes :Routes = [
+   {path: '', redirectTo:'/customer-my-account',pathMatch:'full'},
+   {path: 'customer-my-account', component:CustomerMyAccountComponent},
+   {path: 'customer-current-orders', component: CustomerCurrentOrderComponent},
+ ];
 
 @NgModule({
   declarations: [
@@ -39,20 +39,20 @@ import { CustomerAuthenticationService } from './customer/services/customer-auth
     AboutUsComponent,
     PoliciesComponent,
     ConnectUsComponent,
-    CustomerMyAccountComponent
+    CustomerMyAccountComponent,
+    CustomerCurrentOrderComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    //RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     FormsModule, 
     ReactiveFormsModule,
     HttpModule,
-   
     AppRoutingModule,
    
-    
-  ],
+    ],
   providers: [CustomerAuthenticationService],
   bootstrap: [AppComponent]
 })

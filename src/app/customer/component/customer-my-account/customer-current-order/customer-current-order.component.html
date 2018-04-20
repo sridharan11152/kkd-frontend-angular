@@ -1,3 +1,90 @@
-<p>
-  customer-current-order works!
-</p>
+
+<!-- <div class="container">
+    <h2 class="text-center"> My Orders </h2>
+    
+    <div class="row">
+        
+            <div class="col-md-4"> -->
+               
+           <!-- <div class="card">
+
+              <div class="card-body">
+                  
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item active"><h5>Order Id :    </h5></li>
+                  <li class="list-group-item">Product Name : </li>
+                  <li class="list-group-item">Quantity   </li>
+                  <li class="list-group-item">Price     </li>
+                  <li class="list-group-item">Rating  </li>
+                  <li class="list-group-item">OTP     </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+  <!-- card end -->
+
+  <!-- <div class="card" style="width:400px">
+         <div class="card-body">
+        <h4 class="card-text">{{currentOrders[0].name}}</h4>
+        <p class="card-text"> {{currentOrders[0].name}}</p>
+      </div>
+    </div>
+    <br> -->
+ 
+ 
+ <!-- </div>
+  </div>
+  </div> -->
+
+  <!-- <div class="container">
+
+      <h3>A demo of Bootstrap Card</h3>
+      
+      <div class="card" style="width:400px">
+      
+          <div class="card text-dark bg-light">
+      
+      
+            <div class="card-body ">
+      
+              <h5 class="card-title">Product Name 1</h5>
+      
+              <p class="card-text bg-success text-left">Place some text for the Product 1 here. </p>
+      
+            </div>
+      
+            <div class="card-footer bg-success text-right text-danger">
+      
+            <a href="#" class="btn btn-outline-light btn-sm">Buy Now</a> <a href="#" class="btn btn-outline-light btn-sm">More info</a>
+      
+            </div>
+      
+        </div>
+      
+          
+      
+      </div> 
+      
+      </div> -->
+      <div class="container">
+        <h2 class="text-center"> My Orders </h2>
+        <div class="row">
+            
+            <div class="col-md-4">
+                 <div class="card" *ngFor="let order of currentOrders">
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item active">OrderId           :   {{order.orderId}}</li>
+                        <li class="list-group-item">Product Name             :   {{order.name}} </li>                            
+                        <li class="list-group-item">Quantity                 :   {{order.quantity}}</li>                            
+                        <li class="list-group-item">Price                    :   {{order.totalAmount}}</li>
+                        <li class="list-group-item">Rating                   :   {{order.avgRating}}</li>
+                        <li class="list-group-item">OTP                      :   {{order.otp}} </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+        <!-- card end -->
+      

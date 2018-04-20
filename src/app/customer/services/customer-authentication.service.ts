@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import{UserDetails} from '../configs/user-details.config';
 import { HttpHeaders } from '@angular/common/http';
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -14,14 +13,30 @@ const httpOptions = {
 @Injectable()
 export class CustomerAuthenticationService {
 
+  
+  
+  public static cus :string;
   constructor(private http : Http) { }
   private headers = new Headers({ 'Content-Type': 'application/json'});
 
-getUserDetails(mobileNumber : String){
+
+  changeCustomerId(customerId : string){
+    
+    
+    CustomerAuthenticationService.cus = customerId;
+
+  }
+
+
+  getUserDetails(mobileNumber : String){
   return this.http.get(UserDetails.url + mobileNumber)
      .map(data => data.json(),
    (error: any)=>this.handleError(error));
-   }
+  }
+
+  
+  
+  
    private handleError(error: Response){
     alert("mobile number not registered");
      return Observable.throw(error.statusText);
@@ -39,5 +54,11 @@ getUserDetails(mobileNumber : String){
      
   }
 
+  getCurrentOrders(customerId : String){
+       return this.http.get("http://10.151.60.187:8025/customerCurrentOrders/kkdcust3001")
+       .map(data=>data.json(),
+       error=>this.handleError(error));
+       }
+  }
 
-}
+

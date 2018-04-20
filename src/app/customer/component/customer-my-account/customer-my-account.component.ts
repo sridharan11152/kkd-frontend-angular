@@ -17,7 +17,9 @@ export class CustomerMyAccountComponent implements OnInit {
   constructor(private customerAuthenticationService :CustomerAuthenticationService) { }
 
   ngOnInit() {
+    this.customerAuthenticationService.changeCustomerId('kkdcust3001');
   }
+  
   
   
   onSubmit(){
