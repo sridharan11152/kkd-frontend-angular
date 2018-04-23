@@ -8,7 +8,77 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 })
 export class CustomerCurrentOrderComponent implements OnInit {
  private customerId : string ;
- private currentOrders : any;
+ private currentOrders : any = [
+ {
+  "address": {
+    "addressLine": "string",
+    "city": "string",
+    "district": "string",
+    "pincode": 0,
+    "state": "string"
+  },
+  "avgRating": 0,
+  "expectedDate": "2018-04-20",
+  "expectedTime": {
+    "hour": "string",
+    "minute": "string",
+    "nano": 0,
+    "second": "string"
+  },
+  "farmerStatus": "string",
+  "kkdCustId": "string",
+  "kkdFarmId": "string",
+  "mobileNo": "string",
+  "name": "string",
+  "orderDeclineReason": "string",
+  "orderId": "string",
+  "orderPlacingDate": "2018-04-20",
+  "orderReceivingDate": "2018-04-20",
+  "orderStatus": "string",
+  "orderType": "string",
+  "otp": "string",
+  "otpVerified": false,
+  "productId": "string",
+  "quantity": 0,
+  "totalAmount": 0,
+  "transactionId": "string",
+  "validityOfOrder": "2018-04-20T10:59:42.039Z"
+ },
+ {
+  "address": {
+    "addressLine": "string",
+    "city": "string",
+    "district": "string",
+    "pincode": 0,
+    "state": "string"
+  },
+  "avgRating": 0,
+  "expectedDate": "2018-04-20",
+  "expectedTime": {
+    "hour": "string",
+    "minute": "string",
+    "nano": 0,
+    "second": "string"
+  },
+  "farmerStatus": "string",
+  "kkdCustId": "string",
+  "kkdFarmId": "string",
+  "mobileNo": "string",
+  "name": "string",
+  "orderDeclineReason": "string",
+  "orderId": "string",
+  "orderPlacingDate": "2018-04-20",
+  "orderReceivingDate": "2018-04-20",
+  "orderStatus": "string",
+  "orderType": "string",
+  "otp": "string",
+  "otpVerified": false,
+  "productId": "string",
+  "quantity": 0,
+  "totalAmount": 0,
+  "transactionId": "string",
+  "validityOfOrder": "2018-04-20T10:59:42.039Z"
+ }];
   constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
   
   getdata(){
@@ -21,7 +91,7 @@ export class CustomerCurrentOrderComponent implements OnInit {
 }
   ngOnInit() {
    this.customerId = CustomerAuthenticationService.cus;
-    this.getdata();
+    //this.getdata();
      
   }}
 

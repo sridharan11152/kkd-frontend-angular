@@ -13,7 +13,7 @@ export class CustomerMyAccountComponent implements OnInit {
   public newPassword: string;
   public reenterNewPassword: string;
   public userDetails ={};
-  title = 'app';
+ 
   constructor(private customerAuthenticationService :CustomerAuthenticationService) { }
 
   ngOnInit() {

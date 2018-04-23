@@ -19,11 +19,12 @@ import { PoliciesComponent } from './shared/policies/policies.component';
 import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CustomerAuthenticationService } from './customer/services/customer-authentication.service';
-
+import {CustomerPreviousOrderComponent} from './customer/component/customer-my-account/customer-previous-order/customer-previous-order.component';
 const routes :Routes = [
    {path: '', redirectTo:'/customer-my-account',pathMatch:'full'},
    {path: 'customer-my-account', component:CustomerMyAccountComponent},
    {path: 'customer-current-orders', component: CustomerCurrentOrderComponent},
+   {path : 'customer-previous-orders' , component:CustomerPreviousOrderComponent},
  ];
 
 @NgModule({
@@ -41,6 +42,7 @@ const routes :Routes = [
     ConnectUsComponent,
     CustomerMyAccountComponent,
     CustomerCurrentOrderComponent,
+    CustomerPreviousOrderComponent,
     
   ],
   imports: [

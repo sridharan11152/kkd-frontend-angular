@@ -55,10 +55,16 @@ export class CustomerAuthenticationService {
   }
 
   getCurrentOrders(customerId : String){
-       return this.http.get("http://10.151.60.187:8025/customerCurrentOrders/kkdcust3001")
+       return this.http.get(UserDetails.currentOrdersUrl+customerId)
        .map(data=>data.json(),
        error=>this.handleError(error));
        }
+
+     getPreviousOrders(customerId : String){
+        return this.http.get(UserDetails.previousOrdersUrl+customerId)
+        .map(data=>data.json(),
+        error=>this.handleError(error));
+        }
   }
 
 
